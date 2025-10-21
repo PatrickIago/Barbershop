@@ -1,4 +1,4 @@
-# 📅 [Nome da Sua Aplicação] - API de Agendamento de Serviços
+# 📅 [BarberShop] - API de Agendamento de Serviços
 
 ![GitHub language count](https://img.shields.io/github/languages/count/PatrickIago/ShoppingCart.API)
 ![GitHub top language](https://img.shields.io/github/languages/top/PatrickIago/ShoppingCart.API)
@@ -24,7 +24,7 @@ A aplicação inclui um recurso essencial de comunicação:
 
 * **Framework:** ASP.NET Core 8 (C#)
 * **Acesso a Dados:** Dapper (Micro-ORM)
-* **Banco de Dados:** [**AQUI: Insira o SGBD que você usou, ex: SQL Server, PostgreSQL**]
+* **Banco de Dados:** [**SQL Server**]
 * **Comunicação:** Cliente SMTP
 * **Documentação:** Swagger/OpenAPI
 
