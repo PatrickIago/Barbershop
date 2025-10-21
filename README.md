@@ -24,33 +24,30 @@ A aplicação inclui um recurso essencial de comunicação:
 
 * **Framework:** ASP.NET Core 8 (C#)
 * **Acesso a Dados:** Dapper (Micro-ORM)
-* **Banco de Dados:** [**SQL Server**]
+* **Banco de Dados:** [**AQUI: Insira o SGBD que você usou, ex: SQL Server, PostgreSQL**]
 * **Comunicação:** Cliente SMTP
 * **Documentação:** Swagger/OpenAPI
 
 ## 📦 Estrutura da API (Endpoints)
 
-A API é dividida em quatro áreas principais, cobrindo as operações CRUD (Criar, Ler, Atualizar, Deletar) para cada recurso:
+A API é dividida em quatro áreas principais, cobrindo as operações **CRUD (Create, Read, Update, Delete)** para cada recurso.
 
-Recurso	Método	Rota	Descrição
-Agendamento	POST	/api/Agendamento	Cria um novo agendamento (GATILHO DE E-MAIL).
-GET	/api/Agendamento	[READ ALL] Retorna todos os agendamentos.
-GET	/api/Agendamento/{id}	[READ ONE] Retorna um agendamento específico.
-GET	/api/Agendamento/por-data/{data}	Busca agendamentos por data.
-PUT	/api/Agendamento/{id}	[UPDATE] Atualiza um agendamento.
-DELETE	/api/Agendamento/{id}	[DELETE] Remove um agendamento.
-Cliente	POST	/api/Cliente	[CREATE] Adiciona um novo cliente.
-GET	/api/Cliente	[READ ALL] Lista todos os clientes.
-GET	/api/Cliente/{id}	[READ ONE] Retorna um cliente específico.
-PUT	/api/Cliente/{id}	[UPDATE] Atualiza os dados de um cliente.
-DELETE	/api/Cliente/{id}	[DELETE] Remove um cliente.
-Profissional	POST	/api/Profissional	[CREATE] Adiciona um novo profissional.
-GET	/api/Profissional	[READ ALL] Lista todos os profissionais.
-GET	/api/Profissional/{id}	[READ ONE] Retorna um profissional específico.
-PUT	/api/Profissional/{id}	[UPDATE] Atualiza os dados de um profissional.
-DELETE	/api/Profissional/{id}	[DELETE] Remove um profissional.
-Serviço	POST	/api/Servico	[CREATE] Adiciona um novo serviço.
-GET	/api/Servico	[READ ALL] Lista todos os serviços.
-GET	/api/Servico/{id}	[READ ONE] Retorna um serviço específico.
-PUT	/api/Servico/{id}	[UPDATE] Atualiza um serviço.
-DELETE	/api/Servico/{id}	[DELETE] Remove um serviço.
+| Recurso | Método | Rota | Descrição |
+| :--- | :--- | :--- | :--- |
+| **Agendamento** | `POST` | `/api/Agendamento` | **[CREATE]** Cria um novo agendamento (**GATILHO DE E-MAIL**). |
+| | `GET` | `/api/Agendamento` | **[READ ALL]** Retorna todos os agendamentos. |
+| | `GET` | `/api/Agendamento/{id}` | **[READ ONE]** Retorna um agendamento específico. |
+| | `GET` | `/api/Agendamento/por-data/{data}` | Busca agendamentos por data. |
+| | `PUT` | `/api/Agendamento/{id}` | **[UPDATE]** Atualiza um agendamento. |
+| | `DELETE` | `/api/Agendamento/{id}` | **[DELETE]** Remove um agendamento. |
+| **Cliente** | `POST` | `/api/Cliente` | **[CREATE]** Adiciona um novo cliente. |
+| | `GET` | `/api/Cliente` | **[READ ALL]** Lista todos os clientes. |
+| | `GET` | `/api/Cliente/{id}` | **[READ ONE]** Retorna um cliente específico. |
+| | `PUT` | `/api/Cliente/{id}` | **[UPDATE]** Atualiza os dados de um cliente. |
+| | `DELETE` | `/api/Cliente/{id}` | **[DELETE]** Remove um cliente. |
+| **Profissional** | `POST` | `/api/Profissional` | **[CREATE]** Adiciona um novo profissional. |
+| | `GET` | `/api/Profissional` | **[READ ALL]** Lista todos os profissionais. |
+| | `GET` | `/api/Profissional/{id}` | **[READ ONE]** Retorna um profissional específico. |
+| | `PUT` | `/api/Profissional/{id}` | **[UPDATE]** Atualiza os dados de um profissional. |
+| | `DELETE` | `/api/Profissional/{id}` | **[DELETE]** Remove um profissional. |
+| **Serviço** |
