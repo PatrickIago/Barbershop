@@ -1,4 +1,4 @@
-# 📅 [BarberShop] - API de Agendamento de Serviços
+# 📅 [Nome da Sua Aplicação] - API de Agendamento de Serviços
 
 ![GitHub language count](https://img.shields.io/github/languages/count/PatrickIago/ShoppingCart.API)
 ![GitHub top language](https://img.shields.io/github/languages/top/PatrickIago/ShoppingCart.API)
@@ -50,4 +50,10 @@ A API é dividida em quatro áreas principais, cobrindo as operações **CRUD (C
 | | `GET` | `/api/Profissional/{id}` | **[READ ONE]** Retorna um profissional específico. |
 | | `PUT` | `/api/Profissional/{id}` | **[UPDATE]** Atualiza os dados de um profissional. |
 | | `DELETE` | `/api/Profissional/{id}` | **[DELETE]** Remove um profissional. |
-| **Serviço** |
+| **Serviço** | `POST` | `/api/Servico` | **[CREATE]** Adiciona um novo serviço. |
+| | `GET` | `/api/Servico` | **[READ ALL]** Lista todos os serviços. |
+| | `GET` | `/api/Servico/{id}` | **[READ ONE]** Retorna um serviço específico. |
+| | `PUT` | `/api/Servico/{id}` | **[UPDATE]** Atualiza um serviço. |
+| | `DELETE` | `/api/Servico/{id}` | **[DELETE]** Remove um serviço. |
+
+
