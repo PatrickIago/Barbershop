@@ -32,16 +32,25 @@ A aplicação inclui um recurso essencial de comunicação:
 
 A API é dividida em quatro áreas principais, cobrindo as operações CRUD (Criar, Ler, Atualizar, Deletar) para cada recurso:
 
-| Recurso | Método | Rota | Descrição |
-| :--- | :--- | :--- | :--- |
-| **Agendamento** | `POST` | `/api/Agendamento` | **Cria um novo agendamento (GATILHO DE E-MAIL).** |
-| | `GET` | `/api/Agendamento/por-data/{data}` | Busca agendamentos por data. |
-| | `GET` | `/api/Agendamento` | Retorna todos os agendamentos. |
-| | `PUT` | `/api/Agendamento/{id}` | Atualiza agendamento. |
-| | `DELETE` | `/api/Agendamento/{id}` | Remove agendamento. |
-| **Cliente** | `POST` | `/api/Cliente` | Adiciona um novo cliente. |
-| | `GET` | `/api/Cliente` | Lista todos os clientes. |
-| **Profissional** | `POST` | `/api/Profissional` | Adiciona um novo profissional. |
-| | `GET` | `/api/Profissional` | Lista todos os profissionais. |
-| **Serviço** | `POST` | `/api/Servico` | Adiciona um novo serviço. |
-| | `GET` | `/api/Servico` | Lista todos os serviços. |
+Recurso	Método	Rota	Descrição
+Agendamento	POST	/api/Agendamento	Cria um novo agendamento (GATILHO DE E-MAIL).
+GET	/api/Agendamento	[READ ALL] Retorna todos os agendamentos.
+GET	/api/Agendamento/{id}	[READ ONE] Retorna um agendamento específico.
+GET	/api/Agendamento/por-data/{data}	Busca agendamentos por data.
+PUT	/api/Agendamento/{id}	[UPDATE] Atualiza um agendamento.
+DELETE	/api/Agendamento/{id}	[DELETE] Remove um agendamento.
+Cliente	POST	/api/Cliente	[CREATE] Adiciona um novo cliente.
+GET	/api/Cliente	[READ ALL] Lista todos os clientes.
+GET	/api/Cliente/{id}	[READ ONE] Retorna um cliente específico.
+PUT	/api/Cliente/{id}	[UPDATE] Atualiza os dados de um cliente.
+DELETE	/api/Cliente/{id}	[DELETE] Remove um cliente.
+Profissional	POST	/api/Profissional	[CREATE] Adiciona um novo profissional.
+GET	/api/Profissional	[READ ALL] Lista todos os profissionais.
+GET	/api/Profissional/{id}	[READ ONE] Retorna um profissional específico.
+PUT	/api/Profissional/{id}	[UPDATE] Atualiza os dados de um profissional.
+DELETE	/api/Profissional/{id}	[DELETE] Remove um profissional.
+Serviço	POST	/api/Servico	[CREATE] Adiciona um novo serviço.
+GET	/api/Servico	[READ ALL] Lista todos os serviços.
+GET	/api/Servico/{id}	[READ ONE] Retorna um serviço específico.
+PUT	/api/Servico/{id}	[UPDATE] Atualiza um serviço.
+DELETE	/api/Servico/{id}	[DELETE] Remove um serviço.
