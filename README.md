@@ -1,4 +1,4 @@
-# 💈 Barbershop System
+# 💈 Barbershop 
 
 Sistema fullstack para gestão de barbearias, focado em **arquitetura limpa, escalabilidade e experiência do usuário**.
 
