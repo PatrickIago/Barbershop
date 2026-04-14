@@ -1,0 +1,40 @@
+<div class="app-layout">
+  <aside class="sidebar">
+    <div class="logo-wrapper">
+      <img src="assets/logo.png" alt="BarberShop Logo" class="brand-logo" />
+    </div>
+
+    <nav class="nav-menu">
+      <a routerLink="/dashboard" routerLinkActive="active" class="nav-item">
+        <span class="icon">📊</span> Home
+      </a>
+    </nav>
+
+    <div class="about-section">
+      <label>SOBRE O DESENVOLVEDOR</label>
+      <p>Sistema moderno focado em performance e UX.</p>
+      <a href="https://github.com/PatrickIago" target="_blank" class="github-link">
+        <span class="icon">🔗</span> GitHub /PatrickIago
+      </a>
+    </div>
+
+    <div class="sidebar-footer">
+      <div class="info-card">
+        <label>CONTATO</label>
+        <p class="small-text">mendespatrick720@gmail.com</p>
+        <p class="small-text">(51) 98057-8804</p>
+      </div>
+      <div class="map-container">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d13837.24584227367!2d-51.176472!3d-29.9174!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1spt-BR!2sbr!4v1713000000000" width="100%" height="80" style="border:0; border-radius: 8px;" allowfullscreen="" loading="lazy"></iframe>
+      </div>
+      <div class="user-admin">
+        <p class="name">Patrick Mendes</p>
+        <p class="role">Administrador</p>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

@@ -1,0 +1,39 @@
+.cliente-wrapper { padding: 40px; animation: fadeIn 0.6s ease; }
+.page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 35px; }
+.page-header h1 { font-size: 2rem; font-weight: 800; color: white; margin: 0; }
+.text-neon { color: #0061ff; text-shadow: 0 0 10px rgba(0, 97, 255, 0.4); }
+.page-header p { color: #8b949e; margin-top: 5px; }
+
+.header-actions { display: flex; gap: 15px; align-items: center; }
+
+.btn-filter {
+  background: rgba(255, 255, 255, 0.05); color: #8b949e;
+  border: 1px solid rgba(255, 255, 255, 0.1); padding: 10px 20px;
+  border-radius: 12px; cursor: pointer; font-weight: 600; transition: 0.3s;
+}
+.btn-filter.active-filter { background: rgba(248, 113, 113, 0.1); color: #f87171; border-color: rgba(248, 113, 113, 0.3); }
+
+.btn-add { background: #0061ff; color: white; border: none; padding: 12px 25px; border-radius: 12px; font-weight: 700; cursor: pointer; box-shadow: 0 5px 15px rgba(0, 97, 255, 0.3); }
+
+.glass-card { background: rgba(255, 255, 255, 0.02); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 20px; overflow: hidden; }
+.pro-table { width: 100%; border-collapse: collapse; }
+.pro-table th { text-align: left; padding: 20px; background: rgba(255, 255, 255, 0.03); color: #0061ff; font-size: 0.75rem; text-transform: uppercase; }
+.pro-table td { padding: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.03); color: #e6edf3; }
+
+.status-tag { padding: 6px 12px; border-radius: 8px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; }
+.status-tag.active { background: rgba(74, 222, 128, 0.1); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.2); }
+.status-tag.inactive { background: rgba(248, 113, 113, 0.1); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.2); }
+
+.btn-icon { background: transparent; border: none; cursor: pointer; font-size: 1.1rem; margin: 0 5px; }
+.btn-icon.restore { filter: brightness(1.5); }
+
+.modal-overlay { position: fixed; inset: 0; background: rgba(0, 0, 0, 0.85); display: flex; justify-content: center; align-items: center; z-index: 1000; backdrop-filter: blur(8px); }
+.modal-card { background: #0d1117; width: 100%; max-width: 500px; padding: 35px; border-radius: 25px; border: 1px solid rgba(0, 97, 255, 0.3); }
+
+.form-group.checkbox { display: flex; align-items: center; gap: 10px; margin-top: 15px; }
+.form-group.checkbox input { width: 18px; height: 18px; cursor: pointer; }
+.form-group.checkbox label { margin-bottom: 0; cursor: pointer; color: white; }
+
+.empty-msg { text-align: center; padding: 60px !important; color: #8b949e; }
+.text-center { text-align: center; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }

@@ -1,0 +1,73 @@
+<div class="servico-wrapper">
+  <header class="page-header">
+    <div>
+      <h1>Tabela de <span class="text-neon">Serviços</span></h1>
+      <p>Gerencie os preços e durações dos procedimentos.</p>
+    </div>
+    <button class="btn-add" (click)="abrirModal()">+ CADASTRAR NOVO</button>
+  </header>
+
+  <div class="glass-card">
+    <table class="pro-table">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>NOME DO SERVIÇO</th>
+          <th>PREÇO</th>
+          <th>DURAÇÃO</th>
+          <th class="text-center">AÇÕES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let s of servicos">
+          <td class="id-col">#{{ s.id }}</td>
+          <td class="name-col">{{ s.nome }}</td>
+          <td class="price-col">R$ {{ s.preco | number:'1.2-2' }}</td>
+          <td><span class="duration-tag">⏱ {{ s.duracao }}</span></td>
+          <td class="text-center">
+            <button class="btn-icon" (click)="editar(s)">✏️</button>
+            <button class="btn-icon delete" (click)="deletarServico(s.id)">🗑️</button>
+          </td>
+        </tr>
+
+        <tr *ngIf="servicos.length === 0">
+          <td colspan="5" class="empty-msg">Nenhum serviço encontrado na base de dados.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="exibirModal">
+  <div class="modal-card">
+    <header>
+      <h2>{{ modoEdicao ? 'Editar' : 'Novo' }} <span class="text-neon">Serviço</span></h2>
+      <button class="close-btn" (click)="fecharModal()">×</button>
+    </header>
+
+    <form [formGroup]="servicoForm" (ngSubmit)="salvar()">
+      <div class="form-group">
+        <label>Nome do Serviço</label>
+        <input type="text" formControlName="nome" placeholder="Ex: Corte e Barba">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Preço (R$)</label>
+          <input type="number" formControlName="preco" placeholder="0.00">
+        </div>
+        <div class="form-group">
+          <label>Duração (hh:mm:ss)</label>
+          <input type="text" formControlName="duracao" placeholder="00:30:00">
+        </div>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="fecharModal()">Cancelar</button>
+        <button type="submit" class="btn-save" [disabled]="servicoForm.invalid">
+          {{ modoEdicao ? 'Atualizar' : 'Salvar' }} Serviço
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="dashboard-wrapper">
+  <div class="loading-overlay" *ngIf="loading">
+    <div class="spinner"></div>
+  </div>
+
+  <header class="dashboard-banner">
+    <div class="banner-info">
+      <h1>Novo <span class="text-blue">Agendamento</span></h1>
+      <p>Selecione os dados para confirmar a reserva do cliente.</p>
+    </div>
+  </header>
+
+  <form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="cards-grid">
+      
+      <div class="card select-card cliente-bg" [class.selected]="form.get('clienteId')?.value">
+        <div class="card-content">
+          <label>CLIENTE</label>
+          <input type="text" 
+                 placeholder="🔍 CPF ou Nome..." 
+                 [(ngModel)]="termoBuscaCpf" 
+                 [ngModelOptions]="{standalone: true}"
+                 (input)="filtrarClientes()"
+                 class="search-input">
+          <select formControlName="clienteId">
+            <option [ngValue]="null" disabled>Selecionar cliente...</option>
+            <option *ngFor="let c of clientesFiltrados" [value]="c.id">{{ c.nome }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card select-card servico-bg" [class.selected]="form.get('servicoId')?.value">
+        <div class="card-content">
+          <label>SERVIÇO</label>
+          <select formControlName="servicoId">
+            <option [ngValue]="null" disabled>O que vamos fazer?</option>
+            <option *ngFor="let s of servicos" [value]="s.id">{{ s.nome }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card select-card profissional-bg" [class.selected]="form.get('profissionalId')?.value">
+        <div class="card-content">
+          <label>BARBEIRO</label>
+          <select formControlName="profissionalId">
+            <option [ngValue]="null" disabled>Quem irá atender?</option>
+            <option *ngFor="let p of profissionais" [value]="p.id">{{ p.nome }}</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="card select-card data-bg" 
+           [class.selected]="form.get('dataHora')?.value"
+           (click)="$any(dateInput).showPicker()">
+        <div class="card-content">
+          <label>DATA E HORA</label>
+          <input type="datetime-local" 
+                 formControlName="dataHora" 
+                 [min]="minDate" 
+                 #dateInput
+                 class="date-input">
+          <p class="helper-text">Clique no card para abrir o calendário.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="action-footer">
+      <button type="submit" class="btn-confirm-booking" [disabled]="form.invalid || loading">
+        <span *ngIf="!loading">✅ FINALIZAR AGENDAMENTO</span>
+        <div *ngIf="loading" class="spinner-button"></div>
+        <span *ngIf="loading"> PROCESSANDO...</span>
+      </button>
+    </div>
+  </form>
+</div>

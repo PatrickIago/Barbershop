@@ -1,0 +1,95 @@
+<div class="cliente-wrapper">
+  <header class="page-header">
+    <div>
+      <h1>Base de <span class="text-neon">Clientes</span></h1>
+      <p>{{ mostrarInativos ? 'Visualizando clientes inativos' : 'Gerencie as informações e o histórico dos seus clientes' }}</p>
+    </div>
+    <div class="header-actions">
+      <button class="btn-filter" (click)="toggleFiltro()" [class.active-filter]="mostrarInativos">
+        {{ mostrarInativos ? '👁️ VER ATIVOS' : '📂 VER INATIVOS' }}
+      </button>
+      <button class="btn-add" (click)="abrirModal()">+ NOVO CLIENTE</button>
+    </div>
+  </header>
+
+  <div class="glass-card">
+    <table class="pro-table">
+      <thead>
+        <tr>
+          <th>NOME / E-MAIL</th>
+          <th>CONTATO</th>
+          <th>CPF</th>
+          <th>CADASTRO</th>
+          <th>STATUS</th>
+          <th class="text-center">AÇÕES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of clientesFiltrados">
+          <td class="name-col">
+            {{ c.nome }}
+            <br><small class="email-sub">{{ c.email }}</small>
+          </td>
+          <td>{{ c.celular }}</td>
+          <td>{{ c.cpf }}</td>
+          <td>{{ c.dataCadastro | date:'dd/MM/yyyy' }}</td>
+          <td>
+            <span class="status-tag" [ngClass]="c.ativo ? 'active' : 'inactive'">
+              {{ c.ativo ? 'Ativo' : 'Inativo' }}
+            </span>
+          </td>
+          <td class="text-center">
+            <button class="btn-icon" (click)="editar(c)">✏️</button>
+            <button class="btn-icon delete" (click)="excluir(c.id)" *ngIf="c.ativo">🗑️</button>
+            <button class="btn-icon restore" (click)="reativar(c)" *ngIf="!c.ativo">🔄</button>
+          </td>
+        </tr>
+        <tr *ngIf="clientesFiltrados.length === 0">
+          <td colspan="6" class="empty-msg">
+            <div class="msg-content">
+              <span>📭</span>
+              <p>Nenhum cliente {{ mostrarInativos ? 'inativo' : 'ativo' }} encontrado.</p>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="exibirModal">
+  <div class="modal-card">
+    <header>
+      <h2>{{ modoEdicao ? 'Editar' : 'Novo' }} <span class="text-neon">Cliente</span></h2>
+      <button class="close-btn" (click)="fecharModal()">×</button>
+    </header>
+    <form [formGroup]="clienteForm" (ngSubmit)="salvar()">
+      <div class="form-group">
+        <label>Nome Completo</label>
+        <input type="text" formControlName="nome" placeholder="Nome do cliente">
+      </div>
+      <div class="form-group">
+        <label>E-mail</label>
+        <input type="email" formControlName="email" placeholder="cliente@email.com">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label>Celular</label>
+          <input type="text" formControlName="celular" placeholder="(00) 00000-0000">
+        </div>
+        <div class="form-group">
+          <label>CPF</label>
+          <input type="text" formControlName="cpf" placeholder="000.000.000-00">
+        </div>
+      </div>
+      <div class="form-group checkbox">
+        <input type="checkbox" id="ativo" formControlName="ativo">
+        <label for="ativo">Cliente Ativo</label>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="fecharModal()">Cancelar</button>
+        <button type="submit" class="btn-save" [disabled]="clienteForm.invalid">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>

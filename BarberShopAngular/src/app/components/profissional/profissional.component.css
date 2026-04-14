@@ -1,0 +1,166 @@
+/* --- CONTAINER PRINCIPAL --- */
+.profissional-wrapper {
+  padding: 40px;
+  animation: fadeIn 0.6s ease;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.page-header h1 { font-size: 2rem; font-weight: 800; color: white; margin: 0; }
+.text-neon { color: #0061ff; text-shadow: 0 0 10px rgba(0, 97, 255, 0.4); }
+.page-header p { color: #8b949e; margin-top: 5px; }
+
+/* --- BOTÃO ADICIONAR (Topo) --- */
+.btn-add {
+  background: #0061ff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 97, 255, 0.3);
+  transition: 0.3s;
+}
+
+.btn-add:hover { transform: translateY(-3px); background: #0052d9; }
+
+/* --- TABELA GLASS --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.pro-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pro-table th {
+  text-align: left; padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #0061ff; font-size: 0.75rem;
+  text-transform: uppercase; letter-spacing: 1px;
+}
+
+.pro-table td {
+  padding: 20px; border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: #e6edf3; font-size: 0.95rem;
+}
+
+.name-col { font-weight: 700; color: white; }
+
+/* --- STATUS TAGS --- */
+.status-tag {
+  padding: 6px 12px; border-radius: 8px; font-size: 0.7rem;
+  font-weight: 800; text-transform: uppercase; display: inline-block;
+}
+.status-tag.active { background: rgba(74, 222, 128, 0.1); color: #4ade80; border: 1px solid rgba(74, 222, 128, 0.2); }
+.status-tag.inactive { background: rgba(248, 113, 113, 0.1); color: #f87171; border: 1px solid rgba(248, 113, 113, 0.2); }
+
+/* --- BOTÕES DE AÇÃO (Tabela) --- */
+.btn-icon {
+  background: transparent; border: none; cursor: pointer;
+  font-size: 1.1rem; margin: 0 5px; transition: 0.2s;
+}
+.btn-icon:hover { transform: scale(1.2); }
+
+/* --- MODAL (Overlay e Card) --- */
+.modal-overlay {
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex; justify-content: center; align-items: center;
+  z-index: 1000; backdrop-filter: blur(8px);
+}
+
+.modal-card {
+  background: #0d1117; width: 100%; max-width: 500px;
+  padding: 35px; border-radius: 25px;
+  border: 1px solid rgba(0, 97, 255, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  animation: modalIn 0.3s ease-out;
+}
+
+.modal-card header {
+  display: flex; justify-content: space-between;
+  align-items: center; margin-bottom: 30px;
+}
+
+.close-btn {
+  background: transparent; border: none; color: #8b949e;
+  font-size: 1.8rem; cursor: pointer;
+}
+
+/* --- FORMULÁRIO DENTRO DO MODAL --- */
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+  display: block; color: #8b949e; font-size: 0.75rem;
+  font-weight: 700; text-transform: uppercase;
+  margin-bottom: 8px; letter-spacing: 0.5px;
+}
+
+.form-group input[type="text"] {
+  width: 100%; background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 15px; border-radius: 10px; color: white;
+  outline: none; transition: 0.3s; box-sizing: border-box;
+}
+
+.form-group input:focus {
+  border-color: #0061ff; background: rgba(0, 97, 255, 0.05);
+}
+
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+/* Estilo para o Checkbox */
+.form-group.checkbox {
+  display: flex; align-items: center; gap: 10px; cursor: pointer;
+}
+.form-group.checkbox input { width: 18px; height: 18px; cursor: pointer; }
+.form-group.checkbox label { margin-bottom: 0; cursor: pointer; }
+
+/* --- AÇÕES DO MODAL --- */
+.modal-actions {
+  display: flex; justify-content: flex-end;
+  gap: 15px; margin-top: 30px;
+}
+
+.btn-save {
+  background: #0061ff; color: white; border: none;
+  padding: 12px 30px; border-radius: 12px;
+  font-weight: 700; cursor: pointer; transition: 0.3s;
+}
+
+.btn-save:hover:not(:disabled) {
+  background: #0052d9; box-shadow: 0 0 15px rgba(0, 97, 255, 0.4);
+}
+
+.btn-save:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-cancel {
+  background: transparent; color: #8b949e;
+  border: none; font-weight: 600; cursor: pointer;
+}
+
+/* --- ANIMAÇÕES --- */
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.text-center { text-align: center; }

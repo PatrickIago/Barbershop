@@ -1,0 +1,45 @@
+<div class="dashboard-wrapper">
+  <header class="dashboard-banner">
+    <div class="banner-info">
+      <h1>Barber<span class="text-blue">Shop</span></h1>
+      <p>Você tem <span class="badge-alert">2 agendamentos</span> para hoje.</p>
+    </div>
+    <button class="btn-agenda" routerLink="/agendamentos">
+      📅 IR PARA AGENDA COMPLETA
+    </button>
+  </header>
+
+  <div class="cards-grid">
+    <div class="card clientes-card" routerLink="/clientes">
+      <div class="card-content">
+        <h2>CLIENTES</h2>
+        <p>Gerencie sua base de contatos e histórico.</p>
+        <button class="btn-action">ACESSAR</button>
+      </div>
+    </div>
+
+    <div class="card servicos-card" routerLink="/servicos">
+      <div class="card-content">
+        <h2>SERVIÇOS</h2>
+        <p>Configure preços, durações e cortes.</p>
+        <button class="btn-action">CONFIGURAR</button>
+      </div>
+    </div>
+
+    <div class="card profissionais-card" routerLink="/profissionais">
+      <div class="card-content">
+        <h2>PROFISSIONAIS</h2>
+        <p>Equipe, horários e cadeiras ativas.</p>
+        <button class="btn-action">GERENCIAR</button>
+      </div>
+    </div>
+
+    <div class="card agendamentos-card" routerLink="/agendamentos">
+      <div class="card-content">
+        <h2>AGENDAMENTOS</h2>
+        <p>Gerencie horários, reservas e status.</p>
+        <button class="btn-action">AGENDAR</button>
+      </div>
+    </div>
+  </div>
+</div>

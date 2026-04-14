@@ -1,0 +1,76 @@
+<div class="profissional-wrapper">
+  <header class="page-header">
+    <div>
+      <h1>Equipe de <span class="text-neon">Profissionais</span></h1>
+      <p>Gerencie quem são os barbeiros ativos na casa.</p>
+    </div>
+    <button class="btn-add" (click)="abrirModal()">+ NOVO PROFISSIONAL</button>
+  </header>
+
+  <div class="glass-card">
+    <table class="pro-table">
+      <thead>
+        <tr>
+          <th>NOME</th>
+          <th>CELULAR</th>
+          <th>CPF</th>
+          <th>STATUS</th>
+          <th class="text-center">AÇÕES</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let p of profissionais">
+          <td class="name-col">{{ p.nome }}</td>
+          <td>{{ p.celular }}</td>
+          <td>{{ p.cpf }}</td>
+          <td>
+            <span [class]="p.ativo ? 'status-tag active' : 'status-tag inactive'">
+              {{ p.ativo ? 'Ativo' : 'Inativo' }}
+            </span>
+          </td>
+          <td class="text-center">
+            <button class="btn-icon" (click)="editar(p)">✏️</button>
+            <button class="btn-icon delete" (click)="excluir(p.id)">🗑️</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="modal-overlay" *ngIf="exibirModal">
+  <div class="modal-card">
+    <header>
+      <h2>{{ modoEdicao ? 'Editar' : 'Novo' }} <span class="text-neon">Profissional</span></h2>
+      <button class="close-btn" (click)="fecharModal()">×</button>
+    </header>
+
+    <form [formGroup]="profissionalForm" (ngSubmit)="salvar()">
+      <div class="form-group">
+        <label>Nome Completo</label>
+        <input type="text" formControlName="nome" placeholder="Ex: João da Silva">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Celular</label>
+          <input type="text" formControlName="celular" placeholder="(51) 99999-9999">
+        </div>
+        <div class="form-group">
+          <label>CPF</label>
+          <input type="text" formControlName="cpf" placeholder="000.000.000-00">
+        </div>
+      </div>
+
+      <div class="form-group checkbox">
+        <input type="checkbox" formControlName="ativo" id="ativo">
+        <label for="ativo">Profissional Ativo</label>
+      </div>
+
+      <div class="modal-actions">
+        <button type="button" class="btn-cancel" (click)="fecharModal()">Cancelar</button>
+        <button type="submit" class="btn-save" [disabled]="profissionalForm.invalid">Salvar</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,224 @@
+/* --- CONTAINER PRINCIPAL --- */
+.servico-wrapper {
+  padding: 40px;
+  animation: fadeIn 0.6s ease;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 35px;
+}
+
+.page-header h1 { font-size: 2rem; font-weight: 800; color: white; }
+.text-neon { color: #0061ff; text-shadow: 0 0 10px rgba(0, 97, 255, 0.4); }
+.page-header p { color: #8b949e; margin-top: 5px; }
+
+.btn-add {
+  background: #0061ff;
+  color: white;
+  border: none;
+  padding: 12px 25px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0, 97, 255, 0.3);
+  transition: 0.3s;
+}
+
+.btn-add:hover { transform: translateY(-3px); background: #0052d9; }
+
+/* --- TABELA GLASS --- */
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.pro-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.pro-table th {
+  text-align: left;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.03);
+  color: #0061ff;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pro-table td {
+  padding: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  color: #e6edf3;
+  font-size: 0.95rem;
+}
+
+.id-col { color: #8b949e; font-family: monospace; }
+.name-col { font-weight: 700; color: white; }
+.price-col { color: #4ade80; font-weight: 800; }
+
+.duration-tag {
+  background: rgba(255, 255, 255, 0.05);
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+
+.btn-icon {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  margin: 0 5px;
+  transition: 0.2s;
+}
+
+.btn-icon:hover { transform: scale(1.2); }
+
+/* --- MODAL (Overlay e Card) --- */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85); /* Fundo escuro */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+  backdrop-filter: blur(8px); /* Efeito de desfoque atrás do modal */
+}
+
+.modal-card {
+  background: #0d1117;
+  width: 100%;
+  max-width: 500px;
+  padding: 35px;
+  border-radius: 25px;
+  border: 1px solid rgba(0, 97, 255, 0.3);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+  animation: modalIn 0.3s ease-out;
+}
+
+.modal-card header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.modal-card h2 {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: white;
+  margin: 0;
+}
+
+.close-btn {
+  background: transparent;
+  border: none;
+  color: #8b949e;
+  font-size: 1.8rem;
+  cursor: pointer;
+  line-height: 1;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  color: #8b949e;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.form-group input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 12px 15px;
+  border-radius: 10px;
+  color: white;
+  font-size: 0.95rem;
+  outline: none;
+  transition: 0.3s;
+  box-sizing: border-box; /* Garante que o padding não estoure a largura */
+}
+
+.form-group input:focus {
+  border-color: #0061ff;
+  background: rgba(0, 97, 255, 0.05);
+  box-shadow: 0 0 10px rgba(0, 97, 255, 0.2);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* --- AÇÕES DO MODAL --- */
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-save {
+  background: #0061ff;
+  color: white;
+  border: none;
+  padding: 12px 30px;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-save:hover:not(:disabled) {
+  background: #0052d9;
+  box-shadow: 0 0 15px rgba(0, 97, 255, 0.4);
+}
+
+.btn-save:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-cancel {
+  background: transparent;
+  color: #8b949e;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-cancel:hover { color: white; }
+
+/* --- ANIMAÇÕES --- */
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.text-center { text-align: center; }

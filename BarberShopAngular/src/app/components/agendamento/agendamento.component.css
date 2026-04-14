@@ -1,0 +1,96 @@
+.dashboard-wrapper { padding: 30px; animation: fadeIn 0.8s ease-out; }
+
+.dashboard-banner {
+  background: #0d1117;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.text-blue { color: #0061ff; }
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.card.select-card {
+  position: relative;
+  height: 420px;
+  border-radius: 25px;
+  background-size: cover;
+  background-position: center;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: flex-end;
+  padding: 25px;
+  transition: all 0.4s ease;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.card.select-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.95) 35%, rgba(0,0,0,0.3) 100%);
+  z-index: 1;
+}
+
+/* IMAGENS SOLICITADAS */
+.cliente-bg { background-image: url('https://images.pexels.com/photos/3993311/pexels-photo-3993311.jpeg?auto=compress&cs=tinysrgb&w=600'); }
+.servico-bg { background-image: url('https://images.pexels.com/photos/18702143/pexels-photo-18702143.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+.profissional-bg { background-image: url('https://images.pexels.com/photos/16372624/pexels-photo-16372624.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+.data-bg { background-image: url('https://images.pexels.com/photos/16474397/pexels-photo-16474397.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'); }
+
+.card.select-card.selected { border-color: #0061ff; box-shadow: 0 0 25px rgba(0, 97, 255, 0.3); }
+
+.card-content { position: relative; z-index: 2; width: 100%; }
+.card-content label { color: #0061ff; font-size: 0.7rem; font-weight: 900; letter-spacing: 2px; margin-bottom: 12px; display: block; }
+
+.search-input {
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.2) !important;
+  border-radius: 8px;
+  color: white !important;
+  padding: 8px 12px;
+  font-size: 0.85rem;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+select, .date-input {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 10px 0;
+  outline: none;
+}
+
+select option { background-color: #0d1117; color: white; }
+
+.date-input::-webkit-calendar-picker-indicator { filter: invert(1); cursor: pointer; }
+
+/* SPINNERS */
+.loading-overlay {
+  position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.7); display: flex; justify-content: center; align-items: center; z-index: 9999;
+}
+.spinner { width: 50px; height: 50px; border: 5px solid rgba(0, 97, 255, 0.2); border-radius: 50%; border-top-color: #0061ff; animation: spin 1s linear infinite; }
+.spinner-button { width: 18px; height: 18px; border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 50%; border-top-color: #fff; display: inline-block; animation: spin 1s linear infinite; margin-right: 10px; vertical-align: middle; }
+@keyframes spin { to { transform: rotate(360deg); } }
+
+.btn-confirm-booking {
+  background: #0061ff; color: white; border: none; padding: 20px 80px;
+  border-radius: 15px; font-size: 1.1rem; font-weight: 800; cursor: pointer; margin-top: 40px; transition: 0.3s;
+}
+.btn-confirm-booking:disabled { background: #21262d; color: #484f58; cursor: not-allowed; opacity: 0.5; }
+
+.helper-text { color: #8b949e; font-size: 0.75rem; margin-top: 10px; }
