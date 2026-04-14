@@ -28,6 +28,7 @@ Sistema fullstack para gestão de barbearias, focado em **arquitetura limpa, esc
 O projeto segue os princípios de **Clean Architecture**, garantindo separação de responsabilidades e alta manutenibilidade.
 
 📦 Barbershop
+
 ┣ 📂 Barbershop.Api → Camada de apresentação (Controllers)
 
 ┣ 📂 Barbershop.Application → Regras de aplicação (CQRS, DTOs, Handlers)
