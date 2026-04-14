@@ -29,9 +29,13 @@ O projeto segue os princípios de **Clean Architecture**, garantindo separação
 
 📦 Barbershop
 ┣ 📂 Barbershop.Api → Camada de apresentação (Controllers)
+
 ┣ 📂 Barbershop.Application → Regras de aplicação (CQRS, DTOs, Handlers)
+
 ┣ 📂 Barbershop.Domain → Entidades e regras de negócio
+
 ┣ 📂 Barbershop.Infra → Acesso a dados (EF Core, Repositórios)
+
 ┗ 📂 BarberShopAngularFront → Frontend Angular
 
 
